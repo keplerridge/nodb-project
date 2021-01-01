@@ -4,7 +4,9 @@ class Ravenclaw extends Component {
     constructor() {
         super();
         this.state = {
-            studentName: ''
+            houseStudents: [],
+            studentName: '',
+            studentId: 0
         }
     }
 }
