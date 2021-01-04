@@ -1,9 +1,9 @@
-const slyStudents = [],
+const slyStudents = [];
 let id = 1;
 
 module.exports = {
-    getSlyStudents: (res, req) => {
-        res.status(200).send(gryffStudents);
+    getSlyStudents: (req, res) => {
+        res.status(200).send(slyStudents);
     },
     addSlyStudent: (req, res) => {
 

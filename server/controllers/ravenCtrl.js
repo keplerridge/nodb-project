@@ -1,9 +1,9 @@
-const ravenStudents = [],
+const ravenStudents = [];
 let id = 1;
 
 module.exports = {
-    getRavenStudents: (res, req) => {
-        res.status(200).send(gryffStudents);
+    getRavenStudents: (req, res) => {
+        res.status(200).send(ravenStudents);
     },
     addRavenStudent: (req, res) => {
 

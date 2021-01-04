@@ -1,10 +1,10 @@
-const express = require('express'),
-      gryffCtrl = require('./controllers/gryffCtrl'),
-      huffCtrl = require('./controllers/huffCtrl'),
-      ravenCtrl = require('./controllers/ravenCtrl'),
-      slyCtrl = require('./controllers/slyCtrl'),
-      port = 3456,
-      app= express();
+const express = require('express');
+const gryffCtrl = require('./controllers/gryffCtrl');
+const huffCtrl = require('./controllers/huffCtrl');
+const ravenCtrl = require('./controllers/ravenCtrl');
+const slyCtrl = require('./controllers/slyCtrl');
+const port = 3333;
+const app= express();
 
 app.use(express.json())
 

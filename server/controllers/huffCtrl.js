@@ -1,9 +1,9 @@
-const huffStudents = [],
+const huffStudents = [];
 let id = 1;
 
 module.exports = {
-    getHuffStudents: (res, req) => {
-        res.status(200).send(gryffStudents);
+    getHuffStudents: (req, res) => {
+        res.status(200).send(huffStudents);
     },
     addHuffStudent: (req, res) => {
 
