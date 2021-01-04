@@ -9,9 +9,9 @@ module.exports = {
 
     },
     editStudent: (req, res) => {
-
+        const {id} = req.params;
     },
     expelStudent: (req, res) => {
-        
+        const {id} = req.params;
     }
 }

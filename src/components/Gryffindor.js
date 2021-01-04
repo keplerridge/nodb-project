@@ -1,5 +1,6 @@
+import axios from 'axios';
 import {Component} from 'react';
-import CurrentStudents from './CurrentStudents';
+import GryffStudents from './GryffStudents';
 
 class Gryffindor extends Component {
     constructor(){
@@ -10,11 +11,19 @@ class Gryffindor extends Component {
     }
 
     componentDidMount () {
+        this.getStudents();
+    };
 
+    getStudents = () => {
+        axios.get('/api/students')
+        .then(res => {
+            this.setState({houseStudents: res.data})
+        })
+        .catch(err => console.log(err));
     };
 
     addStudent = () => {
-
+        axios.post('/api/students', {})
     };
 
     editStudent = () => {
@@ -27,7 +36,7 @@ class Gryffindor extends Component {
 
     render() {
       const mappedStudents = this.state.houseStudents.map((student, i) => (
-          <CurrentStudents 
+          <GryffStudents 
             key={i}
             gryffStudent={student}
             addGryffStudentFn={this.addStudent}
@@ -37,9 +46,11 @@ class Gryffindor extends Component {
       ))
       return (
           <div>
-
+              <h2>Gryffindor</h2>
+              <GryffStudents />
+              {mappedStudents}
           </div>
-      )
+        )
     }
 }
 

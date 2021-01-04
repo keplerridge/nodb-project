@@ -1,4 +1,6 @@
 import {Component} from 'react';
+import HuffStudents from './HuffStudents';
+import axios from 'axios';
 
 class Hufflepuff extends Component {
     constructor() {
@@ -7,9 +9,17 @@ class Hufflepuff extends Component {
             houseStudents: []
         }
     }
-
+    
     componentDidMount () {
+        this.getStudents();
+    };
 
+    getStudents = () => {
+        axios.get('/api/students')
+        .then(res => {
+            this.setState({houseStudents: res.data})
+        })
+        .catch(err => console.log(err));
     };
 
     addStudent = () => {
@@ -26,7 +36,7 @@ class Hufflepuff extends Component {
 
     render(){
         const mappedStudents = this.state.houseStudents.map((student, i) => (
-            <CurrentStudents 
+            <HuffStudents 
               key={i}
               huffStudent={student}
               addHuffStudentFn={this.addStudent}
@@ -37,7 +47,9 @@ class Hufflepuff extends Component {
 
         return(
             <div>
-
+                <h2>Hufflepuff</h2>
+                <HuffStudents />
+                {mappedStudents}
             </div>
         )
     }

@@ -1,4 +1,6 @@
 import {Component} from 'react';
+import RavenStudents from './RavenStudents';
+import axios from 'axios';
 
 class Ravenclaw extends Component {
     constructor() {
@@ -9,7 +11,15 @@ class Ravenclaw extends Component {
     }
 
     componentDidMount () {
+        this.getStudents();
+    };
 
+    getStudents = () => {
+        axios.get('/api/students')
+        .then(res => {
+            this.setState({houseStudents: res.data})
+        })
+        .catch(err => console.log(err));
     };
 
     addStudent = () => {
@@ -26,7 +36,7 @@ class Ravenclaw extends Component {
 
     render(){
         const mappedStudents = this.state.houseStudents.map((student, i) => (
-            <CurrentStudents 
+            <RavenStudents 
               key={i}
               ravenStudent={student}
               addRavenStudentFn={this.addStudent}
@@ -37,7 +47,9 @@ class Ravenclaw extends Component {
 
         return(
             <div>
-                
+                <h2>Ravenclaw</h2>
+                <RavenStudents />
+                {mappedStudents}
             </div>
         )
     }
