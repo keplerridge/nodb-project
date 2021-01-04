@@ -5,20 +5,41 @@ class Gryffindor extends Component {
     constructor(){
         super();
         this.state = {
-            houseStudents: [],
-            studentName: '',
-            studentId: 0
+            houseStudents: []
         }
     }
 
+    componentDidMount () {
+
+    };
+
+    addStudent = () => {
+
+    };
+
+    editStudent = () => {
+
+    };
+
+    expelStudent = () => {
+        
+    };
+
     render() {
-      console.log(this.state.houseStudents);
       const mappedStudents = this.state.houseStudents.map((student, i) => (
           <CurrentStudents 
             key={i}
-            student={student}
+            gryffStudent={student}
+            addGryffStudentFn={this.addStudent}
+            editGryffStudentFn={this.editStudent}
+            expelGryffStudentFn={this.expelStudent}
             />
       ))
+      return (
+          <div>
+
+          </div>
+      )
     }
 }
 
