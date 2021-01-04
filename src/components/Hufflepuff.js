@@ -15,11 +15,11 @@ class Hufflepuff extends Component {
     };
 
     getStudents = () => {
-        axios.get('/api/students')
+        axios.get('/api/huff-students')
         .then(res => {
-            this.setState({houseStudents: res.data})
+            this.setState({houseStudents: res})
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
     };
 
     addStudent = () => {

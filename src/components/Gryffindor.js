@@ -15,19 +15,20 @@ class Gryffindor extends Component {
     };
 
     getStudents = () => {
-        axios.get('/api/students')
+        axios.get('/api/gryff-students')
         .then(res => {
-            this.setState({houseStudents: res.data})
+            this.setState({houseStudents: res})
+            console.log(this.state.houseStudents);
         })
         .catch(err => console.log(err));
     };
 
     addStudent = () => {
-        axios.post('/api/students', {})
+        
     };
 
-    editStudent = () => {
-
+    editStudent = (id, newName) => {
+        
     };
 
     expelStudent = () => {
