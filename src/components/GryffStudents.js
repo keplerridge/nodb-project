@@ -22,11 +22,13 @@ class GryffStudents extends Component {
     }
 
     render(){
+        // debugger;
         return(
             <div>
-                {this.state.editView
+                {this.state.editView && this.props.gryffStudent.length > 0
                 ? (
                     <div>
+                        {this.props.gryffStudent}
                         <input 
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
@@ -35,7 +37,7 @@ class GryffStudents extends Component {
                 )
                 : (
                     <div>
-                        <p>{this.props.student}</p>
+                        <p>{this.props.gryffStudent}</p>
                         <button onClick={this.handleToggle}>Edit Name</button>
                     </div>
                 )}

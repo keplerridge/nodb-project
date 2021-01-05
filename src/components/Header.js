@@ -3,7 +3,9 @@ import React from 'react'
 const Header = () => {
     return (
         <div>
-            <header>Hogwarts Student Body</header>
+            <header>
+                <h1>Hogwarts Student Body</h1>
+            </header>
         </div>
     )
 }

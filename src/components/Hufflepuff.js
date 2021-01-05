@@ -17,7 +17,7 @@ class Hufflepuff extends Component {
     getStudents = () => {
         axios.get('/api/huff-students')
         .then(res => {
-            this.setState({houseStudents: res})
+            this.setState({houseStudents: res.huffStudents})
         })
         .catch(err => console.log(err))
     };
@@ -35,21 +35,21 @@ class Hufflepuff extends Component {
     };
 
     render(){
-        const mappedStudents = this.state.houseStudents.map((student, i) => (
-            <HuffStudents 
-              key={i}
-              huffStudent={student}
-              addHuffStudentFn={this.addStudent}
-              editHuffStudentFn={this.editStudent}
-              expelHuffStudentFn={this.expelStudent}
-              />
-        ))
+        // const mappedStudents = this.state.houseStudents.map((student, i) => (
+        //     <HuffStudents 
+        //       key={i}
+        //       huffStudent={student}
+        //       addHuffStudentFn={this.addStudent}
+        //       editHuffStudentFn={this.editStudent}
+        //       expelHuffStudentFn={this.expelStudent}
+        //       />
+        // ))
 
         return(
             <div>
                 <h2>Hufflepuff</h2>
                 <HuffStudents />
-                {mappedStudents}
+                {/* {mappedStudents} */}
             </div>
         )
     }

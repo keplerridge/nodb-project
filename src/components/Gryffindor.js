@@ -17,14 +17,14 @@ class Gryffindor extends Component {
     getStudents = () => {
         axios.get('/api/gryff-students')
         .then(res => {
-            this.setState({houseStudents: res})
-            console.log(this.state.houseStudents);
+            this.setState({houseStudents: res.data})
         })
         .catch(err => console.log(err));
     };
 
     addStudent = () => {
         
+        this.getStudents();
     };
 
     editStudent = (id, newName) => {
@@ -36,7 +36,7 @@ class Gryffindor extends Component {
     };
 
     render() {
-      const mappedStudents = this.state.houseStudents.map((student, i) => (
+      const mappedStudents = this.state.houseStudents.map((student, i) => 
           <GryffStudents 
             key={i}
             gryffStudent={student}
@@ -44,11 +44,13 @@ class Gryffindor extends Component {
             editGryffStudentFn={this.editStudent}
             expelGryffStudentFn={this.expelStudent}
             />
-      ))
+      )
+    console.log(this.state.houseStudents);
+
       return (
           <div>
               <h2>Gryffindor</h2>
-              <GryffStudents />
+
               {mappedStudents}
           </div>
         )

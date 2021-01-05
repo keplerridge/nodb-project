@@ -17,7 +17,7 @@ class Ravenclaw extends Component {
     getStudents = () => {
         axios.get('/api/raven-students')
         .then(res => {
-            this.setState({houseStudents: res})
+            this.setState({houseStudents: res.ravenStudents})
         })
         .catch(err => console.log(err));
     };
@@ -35,21 +35,21 @@ class Ravenclaw extends Component {
     };
 
     render(){
-        const mappedStudents = this.state.houseStudents.map((student, i) => (
-            <RavenStudents 
-              key={i}
-              ravenStudent={student}
-              addRavenStudentFn={this.addStudent}
-              editRavenStudentFn={this.editStudent}
-              expelRavenStudentFn={this.expelStudent}
-              />
-        ))
+        // const mappedStudents = this.state.houseStudents.map((student, i) => (
+        //     <RavenStudents 
+        //       key={i}
+        //       ravenStudent={student}
+        //       addRavenStudentFn={this.addStudent}
+        //       editRavenStudentFn={this.editStudent}
+        //       expelRavenStudentFn={this.expelStudent}
+        //       />
+        // ))
 
         return(
             <div>
                 <h2>Ravenclaw</h2>
-                <RavenStudents />
-                {mappedStudents}
+                {/* <RavenStudents /> */}
+                {/* {mappedStudents} */}
             </div>
         )
     }

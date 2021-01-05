@@ -17,7 +17,7 @@ class Slytherin extends Component {
     getStudents = () => {
         axios.get('/api/sly-students')
         .then(res => {
-            this.setState({houseStudents: res})
+            this.setState({houseStudents: res.slyStudents})
         })
         .catch(err => console.log(err));
     };
@@ -35,21 +35,21 @@ class Slytherin extends Component {
     };
 
     render(){
-        const mappedStudents = this.state.houseStudents.map((student, i) => (
-            <SlyStudents 
-              key={i}
-              slyStudent={student}
-              addSlyStudentFn={this.addStudent}
-              editSlyStudentFn={this.editStudent}
-              expelSlyStudentFn={this.expelStudent}
-              />
-        ))
+        // const mappedStudents = this.state.houseStudents.map((student, i) => (
+        //     <SlyStudents 
+        //       key={i}
+        //       slyStudent={student}
+        //       addSlyStudentFn={this.addStudent}
+        //       editSlyStudentFn={this.editStudent}
+        //       expelSlyStudentFn={this.expelStudent}
+        //       />
+        // ))
 
         return(
             <div>
                 <h2>Slytherin</h2>
                 <SlyStudents />
-                {mappedStudents}
+                {/* {mappedStudents} */}
             </div>
         )
     }

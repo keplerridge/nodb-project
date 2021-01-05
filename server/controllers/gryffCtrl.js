@@ -1,4 +1,4 @@
-const gryffStudents = [];
+const gryffStudents = ['Harry Potter', 'Hermione Granger', 'Ronald Weasley'];
 let id = 1;
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
     },
     addGryffStudent: (req, res) => {
         const {student} = req.body
-        
+
         gryffStudents.push(student);
     },
     editGryffStudent: (req, res) => {
