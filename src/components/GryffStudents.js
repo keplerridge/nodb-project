@@ -17,31 +17,32 @@ class GryffStudents extends Component {
         this.setState({editView: !this.state.editView})
     }
 
-    handleEdit = () => {
-
+    handleEdit = (id) => {
+        this.props.editGryffStudentFn(id, this.state.nameInput);
+        this.setState({nameInput: ''})
+        this.handleToggle();
     }
 
     render(){
-        // debugger;
         return(
             <div>
-                {this.state.editView && this.props.gryffStudent.length > 0
+                {this.state.editView
                 ? (
                     <div>
-                        {this.props.gryffStudent}
+                        <p>{this.props.gryffStudent.name}</p>
                         <input 
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
-                        <button onClick={() => this.handleToggle()}>Submit</button>
+                        <button onClick={() => this.handleEdit(this.props.gryffStudent.id)}>Submit</button>
                     </div>
                 )
                 : (
                     <div>
-                        <p>{this.props.gryffStudent}</p>
+                        <p>{this.props.gryffStudent.name}</p>
                         <button onClick={this.handleToggle}>Edit Name</button>
                     </div>
-                )}
-                {/* <button onClick={() => this.props.releaseFn(this.props.pokemon.id)}>Release</button> */}
+                )} 
+                <button onClick={() => this.props.expelGryffStudentFn(this.props.gryffStudent.id)}>Expel</button>
             </div>
         )
     }

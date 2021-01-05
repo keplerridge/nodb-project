@@ -13,7 +13,7 @@ app.use(express.json())
 app.get('/api/gryff-students', gryffCtrl.getGryffStudents);
 app.post('/api/gryff-students', gryffCtrl.addGryffStudent);
 app.put('/api/gryff-students/:id', gryffCtrl.editGryffStudent);
-app.delete('/api/gryff-student/:id', gryffCtrl.expelGryffStudent);
+app.delete('/api/gryff-students/:id', gryffCtrl.expelGryffStudent);
 
 //Hufflepuff endpoints
 app.get('/api/huff-students', huffCtrl.getHuffStudents);
