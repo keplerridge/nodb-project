@@ -39,10 +39,13 @@ class GryffStudents extends Component {
                 : (
                     <div>
                         <p>{this.props.gryffStudent.name}</p>
-                        <button onClick={this.handleToggle}>Edit Name</button>
+                        <section>
+                            <button onClick={this.handleToggle}>Edit Name</button>
+                            <button onClick={() => this.props.expelGryffStudentFn(this.props.gryffStudent.id)}>Expel</button>
+                        </section>
                     </div>
                 )} 
-                <button onClick={() => this.props.expelGryffStudentFn(this.props.gryffStudent.id)}>Expel</button>
+                
             </div>
         )
     }

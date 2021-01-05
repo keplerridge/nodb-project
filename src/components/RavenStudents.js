@@ -39,10 +39,12 @@ class RavenStudents extends Component {
                 : (
                     <div>
                         <p>{this.props.ravenStudent.name}</p>
-                        <button onClick={this.handleToggle}>Edit Name</button>
+                        <section>
+                            <button onClick={this.handleToggle}>Edit Name</button>
+                            <button onClick={() => this.props.expelRavenStudentFn(this.props.ravenStudent.id)}>Expel</button>
+                        </section>
                     </div>
                 )} 
-                <button onClick={() => this.props.expelRavenStudentFn(this.props.ravenStudent.id)}>Expel</button>
             </div>
         )
     }

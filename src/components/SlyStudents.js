@@ -39,10 +39,12 @@ class SlyStudents extends Component {
                 : (
                     <div>
                         <p>{this.props.slyStudent.name}</p>
-                        <button onClick={this.handleToggle}>Edit Name</button>
+                        <section>
+                            <button onClick={this.handleToggle}>Edit Name</button>
+                            <button onClick={() => this.props.expelSlyStudentFn(this.props.slyStudent.id)}>Expel</button>
+                        </section>
                     </div>
                 )} 
-                <button onClick={() => this.props.expelSlyStudentFn(this.props.slyStudent.id)}>Expel</button>
             </div>
         )
     }

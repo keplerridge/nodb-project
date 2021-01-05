@@ -70,13 +70,13 @@ class Gryffindor extends Component {
       )
 
       return (
-          <div>
+          <div id='gryffindor'>
             <h2>Gryffindor</h2>
             <button onClick={() => this.handleAdd(this.state.nameInput)}>Add Student</button>
             <input 
               value = {this.state.nameInput}
               onChange={e => this.handleInput(e.target.value)}/>
-            {mappedStudents}
+            <p id='gryff-students'>{mappedStudents}</p>
           </div>
         )
     }

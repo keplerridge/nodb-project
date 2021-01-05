@@ -1,1 +1,86 @@
+.app {
+    height: cover;
+    width: cover;
+}
 
+.houses {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gryffindor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 75vh;
+}
+
+#gryff-students {
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+#ravenclaw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 75vh;
+}
+
+#raven-students {
+    overflow-y: scroll;
+}
+
+#hufflepuff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 75vh;
+}
+
+#huff-students {
+    overflow-y: scroll;
+}
+
+#slytherin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 75vh;
+}
+
+#sly-students {
+    overflow-y: scroll;
+    align-items: center;
+}
+
+input {
+    background-color: inherit;
+    border-radius: 10px;
+}
+
+button {
+    background-color: inherit;
+    border-radius: 10px;
+}

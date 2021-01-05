@@ -39,10 +39,12 @@ class HuffStudents extends Component {
                 : (
                     <div>
                         <p>{this.props.huffStudent.name}</p>
-                        <button onClick={this.handleToggle}>Edit Name</button>
+                        <section>
+                            <button onClick={this.handleToggle}>Edit Name</button>
+                            <button onClick={() => this.props.expelHuffStudentFn(this.props.huffStudent.id)}>Expel</button>
+                        </section>
                     </div>
                 )} 
-                <button onClick={() => this.props.expelHuffStudentFn(this.props.huffStudent.id)}>Expel</button>
             </div>
         )
     }

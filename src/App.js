@@ -9,13 +9,13 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <header><Header /></header>
-      <section>
-        <Gryffindor />
-        <Ravenclaw />
-        <Hufflepuff />
-        <Slytherin />
+      <section className='houses'>
+        <Gryffindor className='gryffindor'/>
+        <Ravenclaw className='ravenclaw'/>
+        <Hufflepuff className='hufflepuff'/>
+        <Slytherin className='slytherin'/>
       </section>
       <footer><Footer /></footer>
     </div>
