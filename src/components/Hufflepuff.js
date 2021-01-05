@@ -6,7 +6,8 @@ class Hufflepuff extends Component {
     constructor() {
         super();
         this.state = {
-            houseStudents: []
+            houseStudents: [],
+            nameInput: ''
         }
     }
     
@@ -17,40 +18,66 @@ class Hufflepuff extends Component {
     getStudents = () => {
         axios.get('/api/huff-students')
         .then(res => {
-            this.setState({houseStudents: res.huffStudents})
+            this.setState({houseStudents: res.data})
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     };
 
-    addStudent = () => {
-
+    addStudent = (student) => {
+        axios.post('/api/huff-students', {student: student})
+        .then(res => {
+            this.setState({houseStudents: res.data})
+        })
+        .catch(err => console.log(err));
+        this.getStudents();
     };
 
-    editStudent = () => {
+    editStudent = (id, newName) => {
+        let body = {name: newName}
 
+        axios.put(`/api/huff-students/${id}`, body)
+        .then(res => {
+            this.setState({houseStudents: res.data})
+        })
+        .catch(err => console.log(err));
     };
 
-    expelStudent = () => {
-        
+    expelStudent = (id) => {
+        axios.delete(`/api/huff-students/${id}`)
+        .then(res => {
+            this.setState({houseStudents: res.data})
+        })
+        .catch(err => console.log(err));
     };
 
-    render(){
-        // const mappedStudents = this.state.houseStudents.map((student, i) => (
-        //     <HuffStudents 
-        //       key={i}
-        //       huffStudent={student}
-        //       addHuffStudentFn={this.addStudent}
-        //       editHuffStudentFn={this.editStudent}
-        //       expelHuffStudentFn={this.expelStudent}
-        //       />
-        // ))
+    handleInput = (val) => {
+        this.setState({nameInput: val})
+    }
 
-        return(
-            <div>
-                <h2>Hufflepuff</h2>
-                <HuffStudents />
-                {/* {mappedStudents} */}
-            </div>
+    handleAdd = (student) => {
+        this.addStudent(student);
+        this.setState({nameInput: ''})
+    }
+
+    render() {
+      const mappedStudents = this.state.houseStudents.map((student, i) => 
+          <HuffStudents 
+            key={i}
+            huffStudent={student}
+            editHuffStudentFn={this.editStudent}
+            expelHuffStudentFn={this.expelStudent}
+            />
+      )
+
+      return (
+          <div>
+            <h2>Hufflepuff</h2>
+            <button onClick={() => this.handleAdd(this.state.nameInput)}>Add Student</button>
+            <input 
+              value = {this.state.nameInput}
+              onChange={e => this.handleInput(e.target.value)}/>
+            {mappedStudents}
+          </div>
         )
     }
 }

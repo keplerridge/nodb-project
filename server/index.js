@@ -18,14 +18,14 @@ app.delete('/api/gryff-students/:id', gryffCtrl.expelGryffStudent);
 //Hufflepuff endpoints
 app.get('/api/huff-students', huffCtrl.getHuffStudents);
 app.post('/api/huff-students', huffCtrl.addHuffStudent);
-app.put('/api/huff-student/:id', huffCtrl.editHuffStudent);
-app.delete('/api/huff-student/:id', huffCtrl.expelHuffStudent);
+app.put('/api/huff-students/:id', huffCtrl.editHuffStudent);
+app.delete('/api/huff-students/:id', huffCtrl.expelHuffStudent);
 
 //Ravenclaw endpoints
 app.get('/api/raven-students', ravenCtrl.getRavenStudents);
 app.post('/api/raven-students', ravenCtrl.addRavenStudent);
 app.put('/api/raven-students/:id', ravenCtrl.editRavenStudent);
-app.delete('/api/raven-student/:id', ravenCtrl.expelRavenStudent);
+app.delete('/api/raven-students/:id', ravenCtrl.expelRavenStudent);
 
 //Slytherin endpoints
 app.get('/api/sly-students', slyCtrl.getSlyStudents);

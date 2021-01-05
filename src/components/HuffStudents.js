@@ -17,25 +17,32 @@ class HuffStudents extends Component {
         this.setState({editView: !this.state.editView})
     }
 
+    handleEdit = (id) => {
+        this.props.editHuffStudentFn(id, this.state.nameInput);
+        this.setState({nameInput: ''})
+        this.handleToggle();
+    }
+
     render(){
         return(
             <div>
                 {this.state.editView
                 ? (
                     <div>
+                        <p>{this.props.huffStudent.name}</p>
                         <input 
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
-                        <button onClick={() => this.handleToggle()}>Submit</button>
+                        <button onClick={() => this.handleEdit(this.props.huffStudent.id)}>Submit</button>
                     </div>
                 )
                 : (
                     <div>
-                        <p>{this.props.huffStudent}</p>
+                        <p>{this.props.huffStudent.name}</p>
                         <button onClick={this.handleToggle}>Edit Name</button>
                     </div>
-                )}
-                {/* <button onClick={() => this.props.releaseFn(this.props.pokemon.id)}>Release</button> */}
+                )} 
+                <button onClick={() => this.props.expelHuffStudentFn(this.props.huffStudent.id)}>Expel</button>
             </div>
         )
     }
