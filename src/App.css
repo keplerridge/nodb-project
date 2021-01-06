@@ -147,6 +147,7 @@
 
 input {
     background-color: inherit;
+    border-width: .5px;
     border-radius: 10px;
 }
 
@@ -157,8 +158,4 @@ button {
     color: white;
     border-color: transparent;
     padding-top: 0px;
-}
-
-input {
-    padding-bottom: 0px;
 }
