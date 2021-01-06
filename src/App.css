@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'Magic School Two';
+    src: url('./fonts/MagicSchoolTwo.ttf');
+}
+
 .app {
     height: cover;
     width: cover;
+    font-family: 'Magic School Two';
+    letter-spacing: .25em;
 }
 
 .houses {
@@ -13,12 +20,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
 }
 
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.9em;
+    flex-wrap: nowrap;
 }
 
 #gryffindor {
@@ -32,10 +42,14 @@
 #gryff-students {
     overflow-y: scroll;
     color: #740001;
+    font-size: 1.25em;
+    margin: 0px;
+    padding-bottom: 0px;
 }
 
 #gryff-title {
     color: #740001;
+    font-size: 1.75rem;
 }
 
 #gryff-add {
@@ -66,6 +80,7 @@
 
 #raven-title {
     color: #0E1A40;
+    font-size: 1.75rem;
 }
 
 #raven-add {
@@ -91,6 +106,7 @@
 
 #huff-title {
     color: #FFDB00;
+    font-size: 1.75rem;
 }
 
 #huff-add {
@@ -113,10 +129,12 @@
     overflow-y: scroll;
     align-items: center;
     color: #1A472A;
+    font-size: 1rem;
 }
 
 #sly-title {
     color: #1A472A;
+    font-size: 1.75rem;
 }
 
 #sly-add {
@@ -135,4 +153,12 @@ input {
 button {
     background-color: inherit;
     border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    border-color: transparent;
+    padding-top: 0px;
+}
+
+input {
+    padding-bottom: 0px;
 }

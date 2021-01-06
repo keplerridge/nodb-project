@@ -17,3 +17,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* @font-face {
+  font-family: 'Magic School Two';
+  src: local('Magic School Two'), url(./fonts/MagicSchoolTwo.ttf) format('ttf')
+} */
