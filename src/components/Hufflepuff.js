@@ -71,9 +71,9 @@ class Hufflepuff extends Component {
 
       return (
           <div id='hufflepuff'>
-            <h2>Hufflepuff</h2>
+            <h2 id='huff-title'>Hufflepuff</h2>
             <button onClick={() => this.handleAdd(this.state.nameInput)}>Add Student</button>
-            <input 
+            <input id='huff-add'
               value = {this.state.nameInput}
               onChange={e => this.handleInput(e.target.value)}/>
             <p id='huff-students'>{mappedStudents}</p>

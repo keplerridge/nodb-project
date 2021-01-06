@@ -71,9 +71,9 @@ class Slytherin extends Component {
 
       return (
           <div id='slytherin'>
-            <h2>Slytherin</h2>
+            <h2 id='sly-title'>Slytherin</h2>
             <button onClick={() => this.handleAdd(this.state.nameInput)}>Add Student</button>
-            <input 
+            <input id='sly-add'
               value = {this.state.nameInput}
               onChange={e => this.handleInput(e.target.value)}/>
             <p id='sly-students'>{mappedStudents}</p>

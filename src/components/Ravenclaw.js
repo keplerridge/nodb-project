@@ -71,9 +71,9 @@ class Ravenclaw extends Component {
 
       return (
           <div id='ravenclaw'>
-            <h2>Ravenclaw</h2>
+            <h2 id='raven-title'>Ravenclaw</h2>
             <button onClick={() => this.handleAdd(this.state.nameInput)}>Add Student</button>
-            <input 
+            <input id='raven-add'
               value = {this.state.nameInput}
               onChange={e => this.handleInput(e.target.value)}/>
             <p id='raven-students'>{mappedStudents}</p>

@@ -30,7 +30,7 @@ class HuffStudents extends Component {
                 ? (
                     <div>
                         <p>{this.props.huffStudent.name}</p>
-                        <input 
+                        <input id='huff-edit'
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
                         <button onClick={() => this.handleEdit(this.props.huffStudent.id)}>Submit</button>

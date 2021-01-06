@@ -30,7 +30,7 @@ class GryffStudents extends Component {
                 ? (
                     <div>
                         <p>{this.props.gryffStudent.name}</p>
-                        <input 
+                        <input id='gryff-edit'
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
                         <button onClick={() => this.handleEdit(this.props.gryffStudent.id)}>Submit</button>

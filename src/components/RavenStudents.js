@@ -30,7 +30,7 @@ class RavenStudents extends Component {
                 ? (
                     <div>
                         <p>{this.props.ravenStudent.name}</p>
-                        <input 
+                        <input id='raven-edit'
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
                         <button onClick={() => this.handleEdit(this.props.ravenStudent.id)}>Submit</button>

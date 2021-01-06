@@ -31,11 +31,24 @@
 
 #gryff-students {
     overflow-y: scroll;
+    color: #740001;
+}
+
+#gryff-title {
+    color: #740001;
+}
+
+#gryff-add {
+    color: #740001;
+}
+
+#gryff-edit {
+    color: #740001;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    width: 0px;
+    background: transparent;
 }
 
 #ravenclaw {
@@ -48,6 +61,19 @@
 
 #raven-students {
     overflow-y: scroll;
+    color: #0E1A40;
+}
+
+#raven-title {
+    color: #0E1A40;
+}
+
+#raven-add {
+    color: #0E1A40;
+}
+
+#raven-edit {
+    color: #0E1A40;
 }
 
 #hufflepuff {
@@ -60,6 +86,19 @@
 
 #huff-students {
     overflow-y: scroll;
+    color: #FFDB00;
+}
+
+#huff-title {
+    color: #FFDB00;
+}
+
+#huff-add {
+    color: #FFDB00;
+}
+
+#huff-edit {
+    color: #FFDB00;
 }
 
 #slytherin {
@@ -73,6 +112,19 @@
 #sly-students {
     overflow-y: scroll;
     align-items: center;
+    color: #1A472A;
+}
+
+#sly-title {
+    color: #1A472A;
+}
+
+#sly-add {
+    color: #1A472A;
+}
+
+#sly-edit {
+    color: #1A472A;
 }
 
 input {

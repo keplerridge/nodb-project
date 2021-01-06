@@ -71,9 +71,9 @@ class Gryffindor extends Component {
 
       return (
           <div id='gryffindor'>
-            <h2>Gryffindor</h2>
+            <h2 id='gryff-title'>Gryffindor</h2>
             <button onClick={() => this.handleAdd(this.state.nameInput)}>Add Student</button>
-            <input 
+            <input id='gryff-add'
               value = {this.state.nameInput}
               onChange={e => this.handleInput(e.target.value)}/>
             <p id='gryff-students'>{mappedStudents}</p>

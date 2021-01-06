@@ -30,7 +30,7 @@ class SlyStudents extends Component {
                 ? (
                     <div>
                         <p>{this.props.slyStudent.name}</p>
-                        <input 
+                        <input id='sly-edit'
                             value={this.state.nameInput}
                             onChange={e => this.handleInput(e.target.value)}/>
                         <button onClick={() => this.handleEdit(this.props.slyStudent.id)}>Submit</button>
